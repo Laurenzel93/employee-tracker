@@ -1,5 +1,5 @@
-# employee-tracker
-Video of Functionality: 
+# Employee-Tracker
+Video of Functionality: HERE <br>
 GitHub Page: https://github.com/Laurenzel93/employee-tracker
 
 ## User Story
@@ -20,7 +20,6 @@ Build a command-line application that at a minimum allows the user to:
 
   * Update employee roles
 ```
-
 
 ![Screenshot](assets/employee-tracker1.png)
 ![Screenshot](assets/employee-tracker2.png)

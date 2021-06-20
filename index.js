@@ -25,6 +25,7 @@ const options = [
     "Exit"
 ];
 
+// Function to recognize new roles added by user
 let roles = [];
 const allRoles = function () {
     connection.query('SELECT * FROM role;',
@@ -36,12 +37,6 @@ const allRoles = function () {
         })
     return roles
 };
-
-
-const departments = [];
-const managers = ["No Manager"];
-const yesOrNo = ["Yes", "No"];
-
 
 //Starting questions
 function init() {
@@ -81,7 +76,7 @@ init();
 function viewDept() {
     connection.query("SELECT department.name AS 'Department', employee.first_name AS 'First Name', employee.last_name AS 'Last Name' FROM employee JOIN role ON employee.role_id = role.id JOIN department ON role.department_id = department.id ORDER BY department.name;", (err, response) => {
         if (err) throw err;
-        console.table('\n', res);
+        console.table('\n', response);
         init();
     });
 }
@@ -90,16 +85,16 @@ function viewDept() {
 function viewRole() {
     connection.query("SELECT employee.first_name AS 'First Name', employee.last_name AS 'Last Name', role.title AS Title FROM employee JOIN role ON employee.role_id = role.id ORDER BY employee.last_name;", (err, response) => {
         if (err) throw err;
-        console.table('\n', res);
+        console.table('\n', response);
         init();
     });
 }
 
 // Allows user to view an employee
 function viewEmployee() {
-    connection.query("SELECT employee.id AS 'ID', employee.first_name AS 'First Name', employee.last_name AS 'Last Name', role.title AS 'Title', role.salary AS 'Salary (USD)', department.name AS 'Department', CONCAT(boss.first_name, ' ', boss.last_name) AS 'Manager' FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department ON department.id = role.department_id LEFT JOIN employee boss ON employee.manager_id = boss.id ORDER BY employee.id;", (err, res) => {
+    connection.query("SELECT employee.id AS 'ID', employee.first_name AS 'First Name', employee.last_name AS 'Last Name', role.title AS 'Title', role.salary AS 'Salary (USD)', department.name AS 'Department', CONCAT(boss.first_name, ' ', boss.last_name) AS 'Manager' FROM employee INNER JOIN role on role.id = employee.role_id INNER JOIN department ON department.id = role.department_id LEFT JOIN employee boss ON employee.manager_id = boss.id ORDER BY employee.id;", (err, response) => {
         if (err) throw err;
-        console.table('\n', res);
+        console.table('\n', response);
         init();
     });
 }

@@ -1,5 +1,5 @@
 # Employee-Tracker
-Video of Functionality: HERE <br>
+Video of Functionality: https://drive.google.com/file/d/1b-Q8U38yz07o8AXRMAb6LY5UV70-jbND/view?usp=sharing <br>
 GitHub Page: https://github.com/Laurenzel93/employee-tracker
 
 ## User Story

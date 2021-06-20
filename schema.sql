@@ -5,6 +5,7 @@ USE employeeDB;
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE role (
@@ -30,13 +31,13 @@ CREATE TABLE employee (
 );
 
 INSERT INTO department (name)
-VALUES  ("Administrative Operations"), 
+VALUES  ("Operations"), 
         ("Marketing"), 
         ("Sales"), 
         ("Human Resources");
 
 INSERT INTO role (title, salary, department_id)
-VALUES  ("Administrative Assistant", 38000, 1), 
+VALUES  ("CEO", 100000, 1), 
         ("Sales Representative", 55000, 3), 
         ("Marketing Specialist", 50000, 2), 
         ("HR Representative", 45000, 4);
@@ -50,3 +51,4 @@ VALUES  ("Harry", "Potter", 1, null),
 SELECT * FROM department;
 SELECT * FROM role;
 SELECT * FROM employee;
+

@@ -23,4 +23,3 @@ Build a command-line application that at a minimum allows the user to:
 
 ![Screenshot](assets/employee-tracker1.png)
 ![Screenshot](assets/employee-tracker2.png)
-![Screenshot](assets/employee-tracker3.png)
